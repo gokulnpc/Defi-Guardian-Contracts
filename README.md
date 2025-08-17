@@ -15,7 +15,7 @@ DeFi Guardians is a revolutionary cross-chain decentralized insurance protocol t
 
 ### 🎯 Key Features
 
-- **🔗 Cross-Chain Architecture**: Seamless operation between Arbitrum (Sepolia) and Hedera Testnet using Chainlink CCIP
+- **🔗 Cross-Chain Architecture**: Seamless operation between Sepolia (Sepolia) and Hedera Testnet using Chainlink CCIP
 - **💰 Liquidity Provider Rewards**: 70% of premiums distributed to LPs, 30% reserved for claims
 - **🗳️ Decentralized Governance**: LP-based voting system for claim validation
 - **🎫 Policy NFTs**: ERC721-based insurance policies with on-chain metadata
@@ -24,7 +24,7 @@ DeFi Guardians is a revolutionary cross-chain decentralized insurance protocol t
 
 ## 🏗️ Architecture & Smart Contracts
 
-### Arbitrum Sepolia Contracts
+### Sepolia Sepolia Contracts
 
 ```
 LPVault:      0xEC1f7B099c0a984badF83222aeb61f1e4cd7dB97
@@ -42,7 +42,7 @@ ClaimManager:  0x9D4646f64dF7D98c6a83D60a9Af06c67a9eE0215
 
 ### Contract Responsibilities
 
-#### **Arbitrum Side (Premium Collection & LP Management)**
+#### **Sepolia Side (Premium Collection & LP Management)**
 
 - **`PremiumVault`**: Collects insurance premiums in PYUSD, splits 70%/30% between LP rewards and reserves
 - **`LPVault`**: Manages LP staking, share calculations, and cooldown periods for withdrawals
@@ -51,8 +51,8 @@ ClaimManager:  0x9D4646f64dF7D98c6a83D60a9Af06c67a9eE0215
 #### **Hedera Side (Policy & Governance)**
 
 - **`PolicyManager`**: Issues policy NFTs, stores coverage terms, receives premium notifications
-- **`VotingMirror`**: Tracks LP voting power, receives real-time updates from Arbitrum LPVault
-- **`ClaimManager`**: Handles claim submissions, voting, and sends payout instructions to Arbitrum
+- **`VotingMirror`**: Tracks LP voting power, receives real-time updates from Sepolia LPVault
+- **`ClaimManager`**: Handles claim submissions, voting, and sends payout instructions to Sepolia
 
 ## 🚀 Hardhat 3 Beta Features Utilized
 
@@ -254,7 +254,7 @@ abi.encode(
 
 ### 1. **Dual-Chain Optimization**
 
-- **Arbitrum**: Optimized for high-frequency operations (staking, premiums)
+- **Sepolia**: Optimized for high-frequency operations (staking, premiums)
 - **Hedera**: Optimized for governance and policy management
 
 ### 2. **Dynamic Premium Allocation**
@@ -390,7 +390,7 @@ await claimManager.openClaim(
   policyId,
   claimantAddress,
   claimAmount,
-  ARBITRUM_CHAIN_SELECTOR,
+  Sepolia_CHAIN_SELECTOR,
   payoutVaultAddress
 );
 
@@ -408,7 +408,7 @@ await claimManager.finalizeClaim(claimId, { value: ccipFee });
 
 1. **✨ Cutting-Edge Testing**: 154 comprehensive tests showcasing Hardhat 3's superior testing framework
 2. **🚀 Performance**: Lightning-fast compilation and test execution using Rust-powered components
-3. **🌐 Multichain**: Real cross-chain deployment across Arbitrum and Hedera networks
+3. **🌐 Multichain**: Real cross-chain deployment across Sepolia and Hedera networks
 4. **🔧 Modern Tooling**: Full utilization of Hardhat 3's revamped CLI and plugin system
 
 ### **Real-World Impact**
